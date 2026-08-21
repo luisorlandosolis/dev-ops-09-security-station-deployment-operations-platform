@@ -555,6 +555,51 @@ Current capabilities include:
 
 The deployment console serves as the foundation for future automated workstation provisioning workflows.
 
+## August 2026 Validation Updates
+
+This validation cycle focused on camera redirection, USB device redirection, unattended Remote Desktop automation, and DOPS integration within the Security Station platform.
+
+### Camera Redirection & DOPS Validation
+
+Additional validation was completed to support camera functionality within the Security Station platform and DOPS application.
+
+Validated Components:
+
+- Logitech HD Pro Webcam C920
+- Integrated Webcam Devices
+- RDP USB Device Redirection
+- Camera Device Class Redirection
+- Automated Security Station Launch
+- DOPS Camera Functionality
+
+### Key Findings
+
+Camera-class device redirection proved more scalable than vendor-specific USB device targeting.
+
+Validated Camera Device Classes:
+
+- {6bdd1fc6-810f-11d0-bec7-08002be2092f}
+- {ca3e7ab9-b4c3-4ae6-8251-579ef933890f}
+
+### Baseline Requirements
+
+The following settings were validated as required Security Station baseline configuration items:
+
+- LocalAccountTokenFilterPolicy = 1
+- RedirectionWarningDialogVersion = 1
+- fUsbRedirectionEnableMode = 2
+- RemoteFX USB Device Redirection Enabled
+
+### Outcome
+
+The platform successfully validated:
+
+- Camera Redirection
+- USB Device Redirection
+- DOPS Camera Support
+- Unattended RDP Launch
+- Automated Security Station Operation
+
 Future enhancements include:
 
 - Ansible execution
@@ -1146,9 +1191,36 @@ Validation of the centralized thin-client architecture through automated Remote 
 
 ### Webcam Redirection Validation
 
-![Webcam Redirection Validation](screenshots/07-webcam-redirection-validation.png)
+### Camera Redirection Validation
 
-Validation of webcam functionality through the Security Station Remote Desktop architecture.
+Camera functionality was successfully validated through the Security Station Remote Desktop architecture.
+
+**Documentation Note**
+
+The original camera validation screenshot was intentionally omitted from repository documentation. While the screenshot verified successful camera functionality, it displayed imagery captured from an operational environment. As part of maintaining professional documentation standards and respecting the environment in which the solution was validated, the image was not included. This repository focuses on the technical implementation, validation results, architectural decisions, and lessons learned rather than operational imagery.
+
+Validated Components:
+
+- Integrated Webcam Devices
+- Logitech HD Pro Webcam C920
+- RDP Camera Redirection
+- USB Device Redirection
+- DOPS Camera Functionality
+
+Key Findings:
+
+- Camera device class redirection provided greater compatibility than hardware-specific USB device targeting.
+- RemoteFX USB device redirection was required for reliable camera exposure.
+- Camera functionality was successfully validated within the DOPS application.
+- Camera class GUIDs proved more scalable than vendor-specific USB device identifiers.
+
+Result:
+
+✅ PASS
+
+Outcome:
+
+Camera functionality was successfully validated within the Security Station platform using class-based USB device redirection and unattended RDP workflows. Public-facing and shared documentation remains intentionally sanitized to focus on technical outcomes, implementation details, and architectural lessons learned.
 
 ---
 
